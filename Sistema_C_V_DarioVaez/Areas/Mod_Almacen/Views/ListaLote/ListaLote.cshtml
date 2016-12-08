@@ -1,19 +1,18 @@
 ﻿
 @{
-    ViewBag.Title = "ListaPedidos";
+    ViewBag.Title = "ListaLote";
     Layout = "~/Views/Shared/Plantilla.cshtml";
 }
-
 
 <div class="content">
     <!-- Encabezado Body -->
     <section class="content-header">
         <h1>
-            Pedidos
+            Lote
         </h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-laptop"></i>Gestionar Pedidos</a></li>
-            <li class="active">Pedidos</li>
+            <li><a href="#"><i class="fa fa-laptop"></i>Gestionar Compras</a></li>
+            <li class="active">Registrar Compra</li>
         </ol>
     </section>
     <!-- Encabezado Body -->
@@ -28,7 +27,8 @@
                             <div class="box-body">
                                 <div>
                                     <div class="col-md-2">
-                                        <a href="@Url.Action("RegistrarPedidos" , "RegistrarPedidos", new { area = "Mod_Compra" } )"><button type="button" class="btn btn-block btn-primary">Solicitar Pedido</button></a>
+
+                                        <a href="../../Paginas/Compras/RegistrarLote.html"><button type="button" class="btn btn-block btn-primary">Agregar Lote</button></a>
                                     </div>
                                     <div class="FechaForm1">
                                         <h4 class="col-md-8">Fecha:</h4>
@@ -65,7 +65,7 @@
                                     </div>
                                     <!-- Boton de DateRange -->
 
-                                    <h4 class="col-md-3 text-left">Codigo de Pedido:</h4>
+                                    <h4 class="col-md-3 text-left">Codigo de Lote:</h4>
                                     <!-- Boton de Busqueda -->
                                     <div class="col-md-3">
                                         <div class="input-group">
@@ -95,130 +95,105 @@
                                             <table class="table table-bordered table-hover table-striped">
                                                 <thead>
                                                     <tr>
-                                                        <th>Pedido</th>
-                                                        <th>Fecha de Registro</th>
-                                                        <th>Fecha Requerida</th>
-                                                        <th>Registrador</th>
+                                                        <th>Lote</th>
+                                                        <th>Fecha de Fabricacion</th>
+                                                        <th>Fecha de Vencimiento</th>
+                                                        <th>Cantidad</th>
+                                                        <th>Registro</th>
                                                         <th>Operacion</th>
                                                         <th>Estado</th>
-                                                        <th>Orden de Compra</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                     <tr>
-                                                        <td>P0001</td>
+                                                        <td>LT0001</td>
                                                         <td>10/11/2016</td>
                                                         <td>15/11/2016</td>
-                                                        <td>Usuario01</td>
-
+                                                        <td>70</td>
+                                                        <td>10/11/2016</td>
+                                                        <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target=".example1">Detalle</button>
                                                         <td>
-                                                            <button type="button" class="btn btn-default" data-toggle="modal" data-target=".example1">Detalle</button>
-                                                            <button type="button" class="btn btn-info">Anular</button>
-                                                        <td>
-                                                            <select class="form-control">
-                                                                <option>Seleccionar</option>
-                                                                <option>option 2</option>
-                                                                <option>option 3</option>
-                                                            </select>
+                                                            <div>
+                                                                <select class="form-control">
+                                                                    <option>Seleccionar</option>
+                                                                    <option>option 2</option>
+                                                                    <option>option 3</option>
+                                                                </select>
+                                                            </div>
                                                         </td>
-                                                        <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target=".example2">Generar</button></td>
                                                     </tr>
 
                                                     <tr>
-                                                        <td>P0002</td>
+                                                        <td>LT0002</td>
                                                         <td>11/11/2016</td>
                                                         <td>16/11/2016</td>
-                                                        <td>Usuario02</td>
-
+                                                        <td>80</td>
+                                                        <td>11/11/2016</td>
+                                                        <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target=".example1">Detalle</button>
                                                         <td>
-                                                            <button type="button" class="btn btn-default" data-toggle="modal" data-target=".example1">Detalle</button>
-                                                            <button type="button" class="btn btn-info">Anular</button>
-                                                        <td>
-                                                            <select class="form-control">
-                                                                <option>Seleccionar</option>
-                                                                <option>option 2</option>
-                                                                <option>option 3</option>
-                                                            </select>
+                                                            <div>
+                                                                <select class="form-control">
+                                                                    <option>Seleccionar</option>
+                                                                    <option>option 2</option>
+                                                                    <option>option 3</option>
+                                                                </select>
+                                                            </div>
                                                         </td>
-                                                        <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target=".example2">Generar</button></td>
                                                     </tr>
 
                                                     <tr>
-                                                        <td>P0003</td>
+                                                        <td>LT0003</td>
                                                         <td>12/11/2016</td>
                                                         <td>17/11/2016</td>
-                                                        <td>Usuario03</td>
-
+                                                        <td>90</td>
+                                                        <td>10/11/2016</td>
+                                                        <td><button type="button" class="btn  btn-primary" data-toggle="modal" data-target=".example1">Detalle</button>
                                                         <td>
-                                                            <button type="button" class="btn btn-default" data-toggle="modal" data-target=".example1">Detalle</button>
-                                                            <button type="button" class="btn btn-info">Anular</button>
-                                                        <td>
-                                                            <select class="form-control">
-                                                                <option>Seleccionar</option>
-                                                                <option>option 2</option>
-                                                                <option>option 3</option>
-                                                            </select>
+                                                            <div>
+                                                                <select class="form-control">
+                                                                    <option>Seleccionar</option>
+                                                                    <option>option 2</option>
+                                                                    <option>option 3</option>
+                                                                </select>
+                                                            </div>
                                                         </td>
-                                                        <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target=".example2">Generar</button></td>
                                                     </tr>
 
                                                     <tr>
-                                                        <td>P0004</td>
+                                                        <td>LT0004</td>
                                                         <td>13/11/2016</td>
                                                         <td>18/11/2016</td>
-                                                        <td>Usuario01</td>
-
+                                                        <td>90</td>
+                                                        <td>11/11/2016</td>
+                                                        <td><button type="button" class="btn  btn-primary" data-toggle="modal" data-target=".example1">Detalle</button>
                                                         <td>
-                                                            <button type="button" class="btn btn-default" data-toggle="modal" data-target=".example1">Detalle</button>
-                                                            <button type="button" class="btn btn-info">Anular</button>
-                                                        <td>
-                                                            <select class="form-control">
-                                                                <option>Seleccionar</option>
-                                                                <option>option 2</option>
-                                                                <option>option 3</option>
-                                                            </select>
+                                                            <div>
+                                                                <select class="form-control">
+                                                                    <option>Seleccionar</option>
+                                                                    <option>option 2</option>
+                                                                    <option>option 3</option>
+                                                                </select>
+                                                            </div>
                                                         </td>
-                                                        <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target=".example2">Generar</button></td>
                                                     </tr>
 
                                                     <tr>
-                                                        <td>P0005</td>
+                                                        <td>LT0005</td>
                                                         <td>14/11/2016</td>
                                                         <td>18/11/2016</td>
-                                                        <td>Usuario02</td>
-
+                                                        <td>100</td>
+                                                        <td>10/11/2016</td>
+                                                        <td><button type="button" class="btn  btn-primary" data-toggle="modal" data-target=".example1">Detalle</button>
                                                         <td>
-                                                            <button type="button" class="btn btn-default" data-toggle="modal" data-target=".example1">Detalle</button>
-                                                            <button type="button" class="btn btn-info">Anular</button>
-                                                        <td>
-                                                            <select class="form-control">
-                                                                <option>Seleccionar</option>
-                                                                <option>option 2</option>
-                                                                <option>option 3</option>
-                                                            </select>
+                                                            <div>
+                                                                <select class="form-control">
+                                                                    <option>Seleccionar</option>
+                                                                    <option>option 2</option>
+                                                                    <option>option 3</option>
+                                                                </select>
+                                                            </div>
                                                         </td>
-                                                        <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target=".example2">Generar</button></td>
                                                     </tr>
-
-                                                    <tr>
-                                                        <td>P0006</td>
-                                                        <td>15/11/2016</td>
-                                                        <td>19/11/2016</td>
-                                                        <td>Usuario03</td>
-
-                                                        <td>
-                                                            <button type="button" class="btn btn-default" data-toggle="modal" data-target=".example1">Detalle</button>
-                                                            <button type="button" class="btn btn-info ">Anular</button>
-                                                        <td>
-                                                            <select class="form-control">
-                                                                <option>Seleccionar</option>
-                                                                <option>option 2</option>
-                                                                <option>option 3</option>
-                                                            </select>
-                                                        </td>
-                                                        <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target=".example2">Generar</button></td>
-                                                    </tr>
-
                                                 </tbody>
                                             </table>
                                         </div>
@@ -247,3 +222,4 @@
     </section>
     <!-- Main content -->
 </div>
+

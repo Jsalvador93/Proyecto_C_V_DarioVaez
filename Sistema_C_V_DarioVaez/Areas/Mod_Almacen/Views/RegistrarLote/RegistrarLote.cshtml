@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "RegistrarCompra";
+    ViewBag.Title = "RegistrarLote";
     Layout = "~/Views/Shared/Plantilla.cshtml";
 }
 
@@ -8,11 +8,10 @@
     <!-- Encabezado Body -->
     <section class="content-header">
         <h1>
-            Registrar Compra
+            Registrar Lote
         </h1>
         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-laptop"></i>Gestionar Compras</a></li>
-            <li><a href="@Url.Action("ListaCompras" , "ListaCompras", new { area = "Mod_Compra" } )">Compras</a></li>
             <li class="active">Registrar Compra</li>
         </ol>
     </section>
@@ -26,19 +25,11 @@
                     <form role="form">
                         <div class="form-group">
                             <div class="box-body">
-                                <div class="col-md-12">
-                                    <h4 class="col-md-3">Codigo de Compra : </h4>
-                                    <h4 class="col-md-4">00001</h4>
-                                    <h4 class="col-md-2">Fecha :</h4>
-                                    <h4 class="col-md-3">12/11/2016</h4>
-                                </div>
-                                <div class="col-md-12">
-                                    <h4 class="col-md-3">Tipo Comprobante : </h4>
-                                    <h4 class="col-md-4">Factura </h4>
-                                    <h4 class="col-md-2 text-left">N° Comprobante:</h4>
-                                    <div class="col-md-3">
-                                        <input class="form-control input-sm" type="text" placeholder="12345">
-                                    </div>
+                                <div>
+                                    <h4 class="col-md-3">Codigo de Lote : </h4>
+                                    <h4 class="col-md-4">LT001</h4>
+                                    <h4 class="col-md-3">Fecha :</h4>
+                                    <h4 class="col-md-2">12/11/2016</h4>
                                 </div>
                             </div>
                         </div>
@@ -46,26 +37,13 @@
                 </div>
                 <!-- Primera Tabla -->
 
-                <script>
-        $('.clockpicker').clockpicker();
-                </script>
 
                 <div class="box box-body">
                     <form role="form">
                         <div class="form-group">
                             <div class="box-body">
-                                <div class="col-md-12">
-                                    <h4 class="col-md-2">Comprador : </h4>
-                                    <div class="col-md-4">
-                                        <div class="input-group clockpicker">
-                                            <input type="text" class="form-control">
-                                            <div class="input-group-btn">
-                                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".example1"><i class="fa fa-plus"></i></button>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <h4 class="col-md-3">Fecha de Compra:</h4>
+                                <div>
+                                    <h4 class="col-md-3">Fecha Fabricacion:</h4>
                                     <div class="col-md-3">
                                         <div class="input-group date">
                                             <div class="input-group-addon">
@@ -74,18 +52,14 @@
                                             <input type="text" class="form-control pull-right" id="datepicker">
                                         </div>
                                     </div>
-                                </div>
 
-                                <div class="col-md-12">
-                                    <h4 class="col-md-2">Registrador : </h4>
-                                    <h4 class="col-md-4">Nombre del Usuario</h4>
-                                    <h4 class="col-md-2">Proveedor : </h4>
-                                    <div class="col-md-4">
-                                        <div class="input-group clockpicker">
-                                            <input type="text" class="form-control">
-                                            <div class="input-group-btn">
-                                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".example2"><i class="fa fa-plus"></i></button>
+                                    <h4 class="col-md-3 text-left">Fecha Vencimiento:</h4>
+                                    <div class="col-md-3">
+                                        <div class="input-group date">
+                                            <div class="input-group-addon">
+                                                <i class="fa fa-calendar"></i>
                                             </div>
+                                            <input type="text" class="form-control pull-right" id="datepicker1">
                                         </div>
                                     </div>
                                 </div>
@@ -94,6 +68,9 @@
                     </form>
                 </div>
 
+                <script type="text/javascript">
+        $('.clockpicker').clockpicker();
+                </script>
 
                 <div class="box box-primary">
                     <form role="form">
@@ -102,14 +79,45 @@
                                 <div>
                                     <div class="col-md-12">
 
-                                        <h4 class="col-md-2">Pedido : </h4>
+                                        <h4 class="col-md-2">Producto : </h4>
                                         <div class="col-md-4">
                                             <div class="input-group clockpicker">
                                                 <input type="text" class="form-control">
                                                 <div class="input-group-btn">
-                                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".example3"><i class="fa fa-plus"></i></button>
+                                                    <button type="button" class="btn btn-primary" class="btn btn-primary" data-toggle="modal" data-target=".example1"><i class="fa fa-plus"></i></button>
                                                 </div>
                                             </div>
+                                        </div>
+
+                                        <h4 class="col-md-3">Cantidad:</h4>
+                                        <div class="col-md-3">
+                                            <select class="form-control">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+
+                                        <h4 class="col-md-3">Unidad de Compra: </h4>
+                                        <div class="col-md-3">
+                                            <select class="form-control">
+                                                <option>Lorem Ipsum</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                            </select>
+                                        </div>
+
+                                        <h4 class="col-md-3">Unidad de Venta:</h4>
+                                        <div class="col-md-3">
+                                            <select class="form-control">
+                                                <option>Lorem Ipsum</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                            </select>
                                         </div>
                                     </div>
 
@@ -144,53 +152,58 @@
                                                 <thead>
                                                     <tr>
                                                         <th>Detalle</th>
-                                                        <th>Pedido</th>
                                                         <th>Descripcion</th>
                                                         <th>Cantidad</th>
-                                                        <th>Total Producto</th>
+                                                        <th>Unidad de Compra</th>
+                                                        <th>Unidad de Venta</th>
                                                         <th>Operaciones</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                     <tr>
                                                         <td>1</td>
-                                                        <td>P0001</td>
                                                         <td>Camisa</td>
-                                                        <td>3</td>
-                                                        <td>150</td>
-                                                        <td><button type="button" class="btn btn-info">Quitar</button></td>
+                                                        <td>30</td>
+                                                        <td>Caja</td>
+                                                        <td>Unidad</td>
+
+                                                        <td><button type="button" class="btn btn-primary">Quitar</button></td>
                                                     </tr>
                                                     <tr>
                                                         <td>2</td>
-                                                        <td>P0001</td>
                                                         <td>Pantalon</td>
-                                                        <td>2</td>
-                                                        <td>130</td>
-                                                        <td><button type="button" class="btn btn-info">Quitar</button></td>
+                                                        <td>50</td>
+                                                        <td>Caja</td>
+                                                        <td>Unidad</td>
+
+                                                        <td><button type="button" class="btn btn-primary">Quitar</button></td>
                                                     </tr>
                                                     <tr>
                                                         <td>3</td>
-                                                        <td>P0002</td>
                                                         <td>Polo</td>
-                                                        <td>5</td>
-                                                        <td>120</td>
-                                                        <td><button type="button" class="btn btn-info">Quitar</button></td>
+                                                        <td>80</td>
+                                                        <td>Caja</td>
+                                                        <td>Unidad</td>
+
+                                                        <td><button type="button" class="btn btn-primary">Quitar</button></td>
                                                     </tr>
                                                     <tr>
                                                         <td>4</td>
-                                                        <td>P0003</td>
-                                                        <td>Abrigo</td>
-                                                        <td>4</td>
-                                                        <td>110</td>
-                                                        <td><button type="button" class="btn btn-info">Quitar</button></td>
+                                                        <td>Corbata</td>
+                                                        <td>70</td>
+                                                        <td>Caja</td>
+                                                        <td>Unidad</td>
+
+                                                        <td><button type="button" class="btn btn-primary">Quitar</button></td>
                                                     </tr>
                                                     <tr>
                                                         <td>5</td>
-                                                        <td>P0004</td>
-                                                        <td>Polo</td>
-                                                        <td>2</td>
-                                                        <td>110</td>
-                                                        <td><button type="button" class="btn btn-info">Quitar</button></td>
+                                                        <td>Camisa</td>
+                                                        <td>100</td>
+                                                        <td>Caja</td>
+                                                        <td>Unidad</td>
+
+                                                        <td><button type="button" class="btn btn-primary">Quitar</button></td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -198,23 +211,22 @@
                                     </div>
 
                                     <div class="ExampleSubTotal">
-                                        <h4 class="col-md-9">Sub Totral : </h4>
-                                        <h4 class="col-md-3">S/. 290.00</h4>
-
-                                        <h4 class="col-md-9">IGV : </h4>
-                                        <h4 class="col-md-3">S/. 0.00</h4>
-
-                                        <h4 class="col-md-9">Total Neto : </h4>
-                                        <h4 class="col-md-3">S/. 290.00</h4>
+                                        <h4 class="col-md-10">Total de Productos : </h4>
+                                        <h4 class="col-md-2">395</h4>
                                     </div>
 
                                     <div class="col-md-12 CantidadBotones">
                                         <button type="button" class="btn btn-default">Cancelar</button>
                                         <button type="button" class="btn btn-primary">Grabar</button>
+
                                     </div>
 
                                     <style>
                                         .ExampleSubTotal {
+                                            text-align: right;
+                                        }
+
+                                        .CantidadBotones {
                                             text-align: right;
                                         }
                                     </style>

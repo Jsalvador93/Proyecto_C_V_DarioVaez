@@ -190,6 +190,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Mod_Almacen\Controllers\GenerarDevolucionesController.cs" />
+    <Compile Include="Areas\Mod_Almacen\Controllers\ListaLoteController.cs" />
+    <Compile Include="Areas\Mod_Almacen\Controllers\ListaProductoController.cs" />
+    <Compile Include="Areas\Mod_Almacen\Controllers\RedistribuirProductosController.cs" />
+    <Compile Include="Areas\Mod_Almacen\Controllers\RegistrarLoteController.cs" />
+    <Compile Include="Areas\Mod_Almacen\Controllers\RegistrarProductoController.cs" />
+    <Compile Include="Areas\Mod_Almacen\Mod_AlmacenAreaRegistration.cs" />
     <Compile Include="Areas\Mod_Compra\Controllers\ListaComprasController.cs" />
     <Compile Include="Areas\Mod_Compra\Controllers\ListaPedidosController.cs" />
     <Compile Include="Areas\Mod_Compra\Controllers\RegistrarCompraController.cs" />
@@ -201,6 +208,7 @@
     <Compile Include="Areas\Mod_Venta\Controllers\RegistrarDevolucionController.cs" />
     <Compile Include="Areas\Mod_Venta\Controllers\RegistrarVentaController.cs" />
     <Compile Include="Areas\Mod_Venta\Mod_VentaAreaRegistration.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -233,7 +241,14 @@
     <Content Include="Areas\Mod_Compra\Views\ListaCompras\ListaCompras.cshtml" />
     <Content Include="Areas\Mod_Compra\Views\ListaPedidos\ListaPedidos.cshtml" />
     <Content Include="Areas\Mod_Venta\Views\ListaVentas\ListaVentas.cshtml" />
-    <Content Include="Areas\Mod_Compra\Views\ListaPedidos\ModalDetalle.cshtml" />
+    <Content Include="Views\Error\ErrorPage.cshtml" />
+    <Content Include="Areas\Mod_Almacen\Views\web.config" />
+    <Content Include="Areas\Mod_Almacen\Views\ListaLote\ListaLote.cshtml" />
+    <Content Include="Areas\Mod_Almacen\Views\ListaProducto\ListaProducto.cshtml" />
+    <Content Include="Areas\Mod_Almacen\Views\RedistribuirProductos\RedistribuirProductos.cshtml" />
+    <Content Include="Areas\Mod_Almacen\Views\RegistrarLote\RegistrarLote.cshtml" />
+    <Content Include="Areas\Mod_Almacen\Views\RegistrarProducto\RegistrarProducto.cshtml" />
+    <Content Include="Areas\Mod_Almacen\Views\GenerarDevoluciones\GenerarDevoluciones.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -243,6 +258,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Mod_Almacen\Models\" />
+    <Folder Include="Areas\Mod_Almacen\Views\Shared\" />
     <Folder Include="Areas\Mod_Compra\Models\" />
     <Folder Include="Areas\Mod_Compra\Views\Shared\" />
     <Folder Include="Areas\Mod_Venta\Models\" />
