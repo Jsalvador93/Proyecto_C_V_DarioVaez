@@ -107,6 +107,7 @@
     <Content Include="Content\dist\img\avatar5.png" />
     <Content Include="Content\dist\img\logo.jpg" />
     <Content Include="Content\dist\img\user2-160x160.jpg" />
+    <Content Include="Content\dist\js\acordeon.js" />
     <Content Include="Content\dist\js\app.js" />
     <Content Include="Content\dist\js\app.min.js" />
     <Content Include="Content\dist\js\pages\dashboard.js" />
@@ -249,6 +250,10 @@
     <Content Include="Areas\Mod_Almacen\Views\RegistrarLote\RegistrarLote.cshtml" />
     <Content Include="Areas\Mod_Almacen\Views\RegistrarProducto\RegistrarProducto.cshtml" />
     <Content Include="Areas\Mod_Almacen\Views\GenerarDevoluciones\GenerarDevoluciones.cshtml" />
+    <Content Include="Areas\Mod_Venta\Views\ListaVentas\_modalDetalles.cshtml" />
+    <Content Include="Areas\Mod_Venta\Views\ListaVentas\_modalGenerar.cshtml" />
+    <Content Include="Areas\Mod_Venta\Views\RegistrarVenta\_modalAgregarCliente.cshtml" />
+    <Content Include="Areas\Mod_Venta\Views\RegistrarVenta\_modalSeleccionarProducto.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

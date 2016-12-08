@@ -121,10 +121,12 @@
                                                             </div>
                                                         </td>
                                                         <td>
-                                                            <button type="button" class="btn btn-default" data-toggle="modal" data-target=".example1">Detalle</button>
+                                                            <a class="btn btn-default" data-toggle="modal" data-target=".example1" href="@Url.Action("_modalDetalles" , "ListaVentas", new { area = "Mod_Venta" } )" role="button">Detalle</a>
                                                             <button type="button" class="btn  btn-info">Anular</button>
                                                         </td>
-                                                        <td><button type="button" class="btn  btn-primary" data-toggle="modal" data-target=".example2">Generar</button></td>
+                                                        <td>
+                                                            <a class="btn btn-primary" data-toggle="modal" data-target=".example2" href="@Url.Action("_modalGenerar" , "ListaVentas", new { area = "Mod_Venta" } )" role="button">Generar</a>
+                                                        </td>
                                                     </tr>
                                                     <tr>
                                                         <td>C0002</td>
@@ -239,3 +241,23 @@
     <!-- Main content -->
 </div>
 
+<!-- Primer Modal - Detalle -->
+<div class="modal fade example1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            @Html.Partial("_modalDetalles")
+
+        </div>
+    </div>
+</div>
+<!-- Primer Modal - Detalle -->
+<!-- Segundo Modal - Generar -->
+<div class="modal fade example2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            @Html.Partial("_modalGenerar")
+        </div>
+    </div>
+</div>
+<!-- Segundo Modal - Generar -->

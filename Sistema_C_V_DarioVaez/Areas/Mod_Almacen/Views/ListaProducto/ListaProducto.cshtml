@@ -12,7 +12,7 @@
         </h1>
         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-laptop"></i>Administrar Almacén</a></li>
-            <li class="active">Producto</li>
+            <li class="active">Lista Producto</li>
         </ol>
     </section>
     <!-- Encabezado Body -->
@@ -27,7 +27,7 @@
                             <div class="box-body">
                                 <div>
                                     <div class="col-md-2">
-                                        <a href="../../Paginas/Compras/AgregarProducto.html"><button type="button" class="btn btn-block btn-primary">Registrar Producto</button></a>
+                                        <a href="@Url.Action("RegistrarProducto" , "RegistrarProducto", new { area = "Mod_Almacen" } )"><button type="button" class="btn btn-block btn-primary">Registrar Producto</button></a>
                                     </div>
                                     <div class="FechaForm1">
                                         <h4 class="col-md-8">Fecha:</h4>
