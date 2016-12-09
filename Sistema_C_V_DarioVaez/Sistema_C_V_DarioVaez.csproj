@@ -105,6 +105,7 @@
     <Content Include="Content\dist\img\avatar2.png" />
     <Content Include="Content\dist\img\avatar3.png" />
     <Content Include="Content\dist\img\avatar5.png" />
+    <Content Include="Content\dist\img\Captura.PNG" />
     <Content Include="Content\dist\img\logo.jpg" />
     <Content Include="Content\dist\img\user2-160x160.jpg" />
     <Content Include="Content\dist\js\acordeon.js" />
@@ -264,6 +265,14 @@
     <Content Include="Areas\Mod_Almacen\Views\ListaLote\_modalDetalle.cshtml" />
     <Content Include="Areas\Mod_Almacen\Views\RegistrarLote\_modalSeleccionarProducto.cshtml" />
     <Content Include="Areas\Mod_Almacen\Views\ListaProducto\_modalDetalle.cshtml" />
+    <Content Include="Areas\Mod_Almacen\Views\RegistrarProducto\_modalSeccion.cshtml" />
+    <Content Include="Areas\Mod_Almacen\Views\RegistrarProducto\_modalTipoProducto.cshtml" />
+    <Content Include="Areas\Mod_Almacen\Views\RegistrarProducto\_modalMarca.cshtml" />
+    <Content Include="Areas\Mod_Almacen\Views\RegistrarProducto\_modalLote.cshtml" />
+    <Content Include="Areas\Mod_Almacen\Views\RegistrarProducto\_modalUbicacion.cshtml" />
+    <Content Include="Areas\Mod_Almacen\Views\RegistrarProducto\_modalCategoria.cshtml" />
+    <Content Include="Areas\Mod_Almacen\Views\RegistrarProducto\_modalSubCategoria.cshtml" />
+    <Content Include="Areas\Mod_Almacen\Views\RegistrarProducto\_modalAngulo.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -49,7 +49,7 @@
                                         <div class="input-group clockpicker">
                                             <input type="text" class="form-control">
                                             <div class="input-group-btn">
-                                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".example1"><i class="fa fa-plus"></i></button>
+                                                <a class="btn btn-primary" data-toggle="modal" data-target=".example1" href="@Url.Action("_modalSeccion" , "RegistrarProducto", new { area = "Mod_Almacen" } )" role="button"><i class="fa fa-plus"></i></a>  
                                             </div>
                                         </div>
                                     </div>
@@ -60,7 +60,7 @@
                                         <div class="input-group clockpicker">
                                             <input type="text" class="form-control">
                                             <div class="input-group-btn">
-                                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".example2"><i class="fa fa-plus"></i></button>
+                                                <a class="btn btn-primary" data-toggle="modal" data-target=".example2" href="@Url.Action("_modalTipoProducto" , "RegistrarProducto", new { area = "Mod_Almacen" } )" role="button"><i class="fa fa-plus"></i></a>     
                                             </div>
                                         </div>
                                     </div>
@@ -71,7 +71,7 @@
                                         <div class="input-group clockpicker">
                                             <input type="text" class="form-control">
                                             <div class="input-group-btn">
-                                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".example3"><i class="fa fa-plus"></i></button>
+                                                <a class="btn btn-primary" data-toggle="modal" data-target=".example3" href="@Url.Action("_modalMarca" , "RegistrarProducto", new { area = "Mod_Almacen" } )" role="button"><i class="fa fa-plus"></i></a>     
                                             </div>
                                         </div>
                                     </div>
@@ -87,7 +87,7 @@
                 </div>
 
                 <script type="text/javascript">
-        $('.clockpicker').clockpicker();
+                    $('.clockpicker').clockpicker();
                 </script>
 
                 <div class="box box-primary">
@@ -100,7 +100,7 @@
                                         <div class="input-group clockpicker">
                                             <input type="text" class="form-control">
                                             <div class="input-group-btn">
-                                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".example4"><i class="fa fa-plus"></i></button>
+                                                <a class="btn btn-primary" data-toggle="modal" data-target=".example4" href="@Url.Action("_modalLote" , "RegistrarProducto", new { area = "Mod_Almacen" } )" role="button"><i class="fa fa-plus"></i></a> 
                                             </div>
                                         </div>
                                     </div>
@@ -166,7 +166,7 @@
                                         <div class="input-group clockpicker">
                                             <input type="text" class="form-control">
                                             <div class="input-group-btn">
-                                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".example6"><i class="fa fa-plus"></i></button>
+                                                <a class="btn btn-primary" data-toggle="modal" data-target=".example6" href="@Url.Action("_modalCategoria" , "RegistrarProducto", new { area = "Mod_Almacen" } )" role="button"><i class="fa fa-plus"></i></a>
                                             </div>
                                         </div>
                                     </div>
@@ -177,7 +177,7 @@
                                         <div class="input-group clockpicker">
                                             <input type="text" class="form-control">
                                             <div class="input-group-btn">
-                                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".example7"><i class="fa fa-plus"></i></button>
+                                                <a class="btn btn-primary" data-toggle="modal" data-target=".example7" href="@Url.Action("_modalSubCategoria" , "RegistrarProducto", new { area = "Mod_Almacen" } )" role="button"><i class="fa fa-plus"></i></a>
                                             </div>
                                         </div>
                                     </div>
@@ -243,7 +243,7 @@
                                         <div class="input-group clockpicker">
                                             <input type="text" class="form-control">
                                             <div class="input-group-btn">
-                                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".example8"><i class="fa fa-plus"></i></button>
+                                                <a class="btn btn-primary" data-toggle="modal" data-target=".example8" href="@Url.Action("_modalSubCategoria" , "RegistrarProducto", new { area = "Mod_Almacen" } )" role="button"><i class="fa fa-plus"></i></a>
                                             </div>
                                         </div>
                                     </div>
@@ -298,3 +298,75 @@
         </div>
     </section>
 </div>
+<!-- Primer Modal - Seccion -->
+<div class="modal fade example1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            @Html.Partial("_modalSeccion")
+        </div>
+    </div>
+</div>
+<!-- Primer Modal - Seccion -->
+<!-- Segundo Modal - Tipo Producto -->
+<div class="modal fade example2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            @Html.Partial("_modalTipoProducto")
+        </div>
+    </div>
+</div>
+<!-- Segundo Modal - Tipo Producto -->
+<!-- Tercer Modal - Marca -->
+<div class="modal fade example3" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            @Html.Partial("_modalMarca")
+        </div>
+    </div>
+</div>
+<!-- Tercer Modal - Marca -->
+<!-- Cuarto Modal - Lote -->
+<div class="modal fade example4" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            @Html.Partial("_modalLote")
+        </div>
+    </div>
+</div>
+<!-- Cuarto Modal - Lote -->
+<!-- Quinto Modal - Ubicacion -->
+<div class="modal fade example5" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            @Html.Partial("_modalUbicacion")
+        </div>
+    </div>
+</div>
+<!-- Quinto Modal - Ubicacion -->
+<!-- Sexto Modal - Categoria -->
+<div class="modal fade example6" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            @Html.Partial("_modalCategoria")
+        </div>
+    </div>
+</div>
+<!-- Sexto Modal - Categoria -->
+<!-- Séptimo Modal - SubCategoria -->
+<div class="modal fade example7" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            @Html.Partial("_modalSubCategoria")
+        </div>
+    </div>
+</div>
+<!-- Séptimo Modal - SubCategoria -->
+<!-- Octavo Modal - Angulo -->
+<div class="modal fade example8" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            @Html.Partial("_modalAngulo")
+        </div>
+    </div>
+</div>
+<!-- Octavo Modal - Angulo -->

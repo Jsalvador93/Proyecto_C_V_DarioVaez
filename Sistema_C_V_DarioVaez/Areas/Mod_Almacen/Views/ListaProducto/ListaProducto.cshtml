@@ -183,7 +183,7 @@
 
 
                                                         <td>
-                                                            <button type="button" class="btn btn-default" data-toggle="modal" data-target=".example1">Detalle</button>
+                                                            <a class="btn btn-default" data-toggle="modal" data-target=".example1" href="@Url.Action("_modalDetalle" , "ListaProducto", new { area = "Mod_Almacen" } )" role="button">Detalle</a>
                                                             <button type="button" class="btn btn-info">Precio</button>
                                                         <td>
                                                             <div class="box-tools" data-toggle="tooltip">
@@ -311,4 +311,12 @@
         </div>
     </section>
     <!-- Main content -->
+</div>
+<!-- Primer Modal - Detalle-->
+<div class="modal fade example1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            @Html.Partial("_modalDetalle")
+        </div>
+    </div>
 </div>
