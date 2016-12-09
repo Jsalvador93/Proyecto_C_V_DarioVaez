@@ -13,5 +13,17 @@ namespace Sistema_C_V_DarioVaez.Areas.Mod_Compra.Controllers
         {
             return View();
         }
+        public ActionResult _modalAgregarComprador()
+        {
+            return PartialView();
+        }
+        public ActionResult _modalAgregarProveedor()
+        {
+            return PartialView();
+        }
+        public ActionResult _modalAgregarPedido()
+        {
+            return PartialView();
+        }
     }
 }

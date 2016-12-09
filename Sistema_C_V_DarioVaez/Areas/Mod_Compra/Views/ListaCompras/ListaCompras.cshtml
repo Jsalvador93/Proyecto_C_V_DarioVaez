@@ -112,7 +112,7 @@
                                                         <td>COMP01</td>
                                                         <td>Proveedor01</td>
                                                         <td>
-                                                            <button type="button" class="btn btn-default" data-toggle="modal" data-target=".example1">Detalle</button>
+                                                            <a class="btn btn-default" data-toggle="modal" data-target=".example1" href="@Url.Action("_modalDetalle" , "ListaCompras", new { area = "Mod_Compra" } )" role="button">Detalle</a>
                                                             <button type="button" class="btn  btn-info">Anular</button>
                                                         </td>
                                                     </tr>
@@ -205,3 +205,12 @@
     <!-- Main content -->
 </div>
 
+<!-- Primer Modal - Detalle Compras -->
+<div class="modal fade example1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            @Html.Partial("_modalDetalle")
+        </div>
+    </div>
+</div>
+<!-- Primer Modal - Detalle Compras -->

@@ -254,6 +254,16 @@
     <Content Include="Areas\Mod_Venta\Views\ListaVentas\_modalGenerar.cshtml" />
     <Content Include="Areas\Mod_Venta\Views\RegistrarVenta\_modalAgregarCliente.cshtml" />
     <Content Include="Areas\Mod_Venta\Views\RegistrarVenta\_modalSeleccionarProducto.cshtml" />
+    <Content Include="Areas\Mod_Compra\Views\ListaCompras\_modalDetalle.cshtml" />
+    <Content Include="Areas\Mod_Compra\Views\RegistrarCompra\_modalAgregarComprador.cshtml" />
+    <Content Include="Areas\Mod_Compra\Views\RegistrarCompra\_modalAgregarProveedor.cshtml" />
+    <Content Include="Areas\Mod_Compra\Views\RegistrarCompra\_modalAgregarPedido.cshtml" />
+    <Content Include="Areas\Mod_Compra\Views\ListaPedidos\_modalDetalle.cshtml" />
+    <Content Include="Areas\Mod_Compra\Views\ListaPedidos\_modalGenerar.cshtml" />
+    <Content Include="Areas\Mod_Compra\Views\RegistrarPedidos\_modalListaProductos.cshtml" />
+    <Content Include="Areas\Mod_Almacen\Views\ListaLote\_modalDetalle.cshtml" />
+    <Content Include="Areas\Mod_Almacen\Views\RegistrarLote\_modalSeleccionarProducto.cshtml" />
+    <Content Include="Areas\Mod_Almacen\Views\ListaProducto\_modalDetalle.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

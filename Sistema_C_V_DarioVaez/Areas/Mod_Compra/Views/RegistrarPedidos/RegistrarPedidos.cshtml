@@ -67,7 +67,7 @@
                                             <div class="input-group clockpicker">
                                                 <input type="text" class="form-control">
                                                 <div class="input-group-btn">
-                                                    <button type="button" class="btn btn-primary"><i class="fa fa-plus"></i></button>
+                                                    <a class="btn btn-primary" data-toggle="modal" data-target=".example1" href="@Url.Action("_modalListaProductos" , "RegistrarPedidos", new { area = "Mod_Compra" } )" role="button"><i class="fa fa-plus"></i></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -199,6 +199,7 @@
                                         .ExampleSubTotal {
                                             text-align: right;
                                         }
+
                                         .CantidadBotones {
                                             text-align: right;
                                         }
@@ -215,3 +216,12 @@
     <!-- Main content -->
 </div>
 
+<!-- Primer Modal - Lista Productos -->
+<div class="modal fade example1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            @Html.Partial("_modalListaProductos")
+        </div>
+    </div>
+</div>
+<!-- Primer Modal - Lista Productos -->

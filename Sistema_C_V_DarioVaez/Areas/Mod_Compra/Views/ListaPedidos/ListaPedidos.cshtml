@@ -112,7 +112,7 @@
                                                         <td>Usuario01</td>
 
                                                         <td>
-                                                            <button type="button" class="btn btn-default" data-toggle="modal" data-target=".example1">Detalle</button>
+                                                            <a class="btn btn-default" data-toggle="modal" data-target=".example1" href="@Url.Action("_modalDetalle" , "ListaPedidos", new { area = "Mod_Compra" } )" role="button">Detalle</a>
                                                             <button type="button" class="btn btn-info">Anular</button>
                                                         <td>
                                                             <select class="form-control">
@@ -121,7 +121,9 @@
                                                                 <option>option 3</option>
                                                             </select>
                                                         </td>
-                                                        <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target=".example2">Generar</button></td>
+                                                        <td>
+                                                            <a class="btn btn-primary" data-toggle="modal" data-target=".example2" href="@Url.Action("_modalGenerar" , "ListaPedidos", new { area = "Mod_Compra" } )" role="button">Generar</a>
+                                                        </td>
                                                     </tr>
 
                                                     <tr>
@@ -247,3 +249,21 @@
     </section>
     <!-- Main content -->
 </div>
+<!-- Primer Modal - Detalle Pedidos-->
+<div class="modal fade example1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            @Html.Partial("_modalDetalle")
+        </div>
+    </div>
+</div>
+<!-- Primer Modal - Detalle Pedidos-->
+<!-- Segundo Modal - Generar Pedidos-->
+<div class="modal fade example2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            @Html.Partial("_modalGenerar")
+        </div>
+    </div>
+</div>
+<!-- Segundo Modal - Generar Pedidos-->

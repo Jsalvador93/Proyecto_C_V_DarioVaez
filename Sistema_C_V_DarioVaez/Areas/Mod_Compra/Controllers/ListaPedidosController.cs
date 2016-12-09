@@ -13,5 +13,13 @@ namespace Sistema_C_V_DarioVaez.Areas.Mod_Compra.Controllers
         {
             return View();
         }
+        public ActionResult _modalDetalle()
+        {
+            return PartialView();
+        }
+        public ActionResult _modalGenerar()
+        {
+            return PartialView();
+        }
     }
 }

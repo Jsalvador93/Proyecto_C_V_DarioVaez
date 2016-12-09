@@ -111,7 +111,8 @@
                                                         <td>15/11/2016</td>
                                                         <td>70</td>
                                                         <td>10/11/2016</td>
-                                                        <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target=".example1">Detalle</button>
+                                                        <td>
+                                                            <a class="btn btn-info" data-toggle="modal" data-target=".example1" href="@Url.Action("_modalDetalle" , "ListaLote", new { area = "Mod_Almacen" } )" role="button">Detalle</a>
                                                         <td>
                                                             <div>
                                                                 <select class="form-control">
@@ -129,7 +130,7 @@
                                                         <td>16/11/2016</td>
                                                         <td>80</td>
                                                         <td>11/11/2016</td>
-                                                        <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target=".example1">Detalle</button>
+                                                        <td><button type="button" class="btn btn-info" data-toggle="modal" data-target=".example1">Detalle</button>
                                                         <td>
                                                             <div>
                                                                 <select class="form-control">
@@ -147,7 +148,7 @@
                                                         <td>17/11/2016</td>
                                                         <td>90</td>
                                                         <td>10/11/2016</td>
-                                                        <td><button type="button" class="btn  btn-primary" data-toggle="modal" data-target=".example1">Detalle</button>
+                                                        <td><button type="button" class="btn  btn-info" data-toggle="modal" data-target=".example1">Detalle</button>
                                                         <td>
                                                             <div>
                                                                 <select class="form-control">
@@ -165,7 +166,7 @@
                                                         <td>18/11/2016</td>
                                                         <td>90</td>
                                                         <td>11/11/2016</td>
-                                                        <td><button type="button" class="btn  btn-primary" data-toggle="modal" data-target=".example1">Detalle</button>
+                                                        <td><button type="button" class="btn  btn-info" data-toggle="modal" data-target=".example1">Detalle</button>
                                                         <td>
                                                             <div>
                                                                 <select class="form-control">
@@ -183,7 +184,7 @@
                                                         <td>18/11/2016</td>
                                                         <td>100</td>
                                                         <td>10/11/2016</td>
-                                                        <td><button type="button" class="btn  btn-primary" data-toggle="modal" data-target=".example1">Detalle</button>
+                                                        <td><button type="button" class="btn  btn-info" data-toggle="modal" data-target=".example1">Detalle</button>
                                                         <td>
                                                             <div>
                                                                 <select class="form-control">
@@ -223,3 +224,12 @@
     <!-- Main content -->
 </div>
 
+<!-- Primer Modal - Detalle Lote-->
+<div class="modal fade example1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            @Html.Partial("_modalDetalle")
+        </div>
+    </div>
+</div>
+<!-- Primer Modal - Detalle Lote-->

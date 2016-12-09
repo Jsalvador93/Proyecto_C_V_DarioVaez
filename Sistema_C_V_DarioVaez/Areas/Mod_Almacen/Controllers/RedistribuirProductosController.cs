@@ -13,5 +13,6 @@ namespace Sistema_C_V_DarioVaez.Areas.Mod_Almacen.Controllers
         {
             return View();
         }
+        
     }
 }

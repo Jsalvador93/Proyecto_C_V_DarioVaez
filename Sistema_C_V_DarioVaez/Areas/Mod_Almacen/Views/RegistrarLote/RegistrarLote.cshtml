@@ -70,7 +70,7 @@
                 </div>
 
                 <script type="text/javascript">
-        $('.clockpicker').clockpicker();
+                    $('.clockpicker').clockpicker();
                 </script>
 
                 <div class="box box-primary">
@@ -85,7 +85,7 @@
                                             <div class="input-group clockpicker">
                                                 <input type="text" class="form-control">
                                                 <div class="input-group-btn">
-                                                    <button type="button" class="btn btn-primary" class="btn btn-primary" data-toggle="modal" data-target=".example1"><i class="fa fa-plus"></i></button>
+                                                    <a class="btn btn-primary" data-toggle="modal" data-target=".example1" href="@Url.Action("_modalSeleccionarProducto" , "RegistrarLote", new { area = "Mod_Almacen" } )" role="button"><i class="fa fa-plus"></i></a>  
                                                 </div>
                                             </div>
                                         </div>
@@ -242,3 +242,12 @@
     </section>
 </div>
 
+<!-- Primer Modal - Seleccionar Lote -->
+<div class="modal fade example1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            @Html.Partial("_modalSeleccionarProducto")
+        </div>
+    </div>
+</div>
+<!-- Primer Modal - Seleccionar Lote -->
