@@ -5,20 +5,19 @@ using System.Web;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace Sistema_C_V_DarioVaez.Models.Mod_Compra.Pro_Marca
+namespace Sistema_C_V_DarioVaez.Models.Mod_Venta.Cprb_Tipo_Comprobante
 {
-    public class Pro_MarcaDA
+    public class Cprb_Tipo_ComprobanteDA
     {
-        
-        public List<Pro_MarcaBE> ListaRegistroMarca(string dato)
+        public List<Cprb_Tipo_ComprobanteBE> ListaRegistroTipoComprobante(String dato)
         {
-            List<Pro_MarcaBE> oListPro_MarcaBE = new List<Pro_MarcaBE>();
+            List<Cprb_Tipo_ComprobanteBE> oListCprb_Tipo_ComprobanteBE = new List<Cprb_Tipo_ComprobanteBE>();
             using (SqlConnection conexion = Conexion.ConnectionManager.GetConnection())
             {
                 try
                 {
                     conexion.Open();
-                    using (SqlCommand oSqlCommand = new SqlCommand("SP_PRO_LC_MARCA", conexion))
+                    using (SqlCommand oSqlCommand = new SqlCommand("SP_CPRB_LC_TIPO_COMPROBANTE", conexion))
                     {
                         oSqlCommand.Parameters.Add("@pDato", SqlDbType.VarChar).Value = dato;
                         oSqlCommand.CommandType = CommandType.StoredProcedure;
@@ -26,17 +25,18 @@ namespace Sistema_C_V_DarioVaez.Models.Mod_Compra.Pro_Marca
                         {
                             while (oSqlDataReader.Read())
                             {
-                                Pro_MarcaBE oPro_MarcaBE = new Pro_MarcaBE();
-                                oPro_MarcaBE.i_idMarca = (int)(oSqlDataReader["i_idMarca"]);
-                                oPro_MarcaBE.vc_dscpMarca = (string)(oSqlDataReader["vc_dscpMarca"]);
-                                oListPro_MarcaBE.Add(oPro_MarcaBE);
+                                Cprb_Tipo_ComprobanteBE oCprb_Tipo_ComprobanteBE = new Cprb_Tipo_ComprobanteBE();
+                                oCprb_Tipo_ComprobanteBE.c_codTipComprobante = (string)(oSqlDataReader["c_codTipComprobante"]);
+                                oCprb_Tipo_ComprobanteBE.vc_dscpTipComprobante = (string)(oSqlDataReader["vc_dscpTipComprobante"]);
+                                oListCprb_Tipo_ComprobanteBE.Add(oCprb_Tipo_ComprobanteBE);
                             }
                             oSqlDataReader.Close();
                         }
                     }
                     conexion.Close();
-                    return oListPro_MarcaBE;
+                    return oListCprb_Tipo_ComprobanteBE;
                 }
+
                 catch (System.Exception e)
                 {
 
@@ -45,4 +45,4 @@ namespace Sistema_C_V_DarioVaez.Models.Mod_Compra.Pro_Marca
             }
         }
     }
-}
+    }

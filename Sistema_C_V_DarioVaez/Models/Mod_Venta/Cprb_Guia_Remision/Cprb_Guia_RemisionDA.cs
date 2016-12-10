@@ -5,20 +5,19 @@ using System.Web;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace Sistema_C_V_DarioVaez.Models.Mod_Compra.Pro_Marca
+namespace Sistema_C_V_DarioVaez.Models.Mod_Venta.Cprb_Guia_Remision
 {
-    public class Pro_MarcaDA
+    public class Cprb_Guia_RemisionDA
     {
-        
-        public List<Pro_MarcaBE> ListaRegistroMarca(string dato)
+        public List<Cprb_Guia_RemisionBE> ListaRegistroGuiaRemision(string dato)
         {
-            List<Pro_MarcaBE> oListPro_MarcaBE = new List<Pro_MarcaBE>();
+            List<Cprb_Guia_RemisionBE> oListCprb_Guia_Remision = new List<Cprb_Guia_RemisionBE>();
             using (SqlConnection conexion = Conexion.ConnectionManager.GetConnection())
             {
                 try
                 {
                     conexion.Open();
-                    using (SqlCommand oSqlCommand = new SqlCommand("SP_PRO_LC_MARCA", conexion))
+                    using (SqlCommand oSqlCommand = new SqlCommand("SP_CPRB_LC_GUIA_REMISION", conexion))
                     {
                         oSqlCommand.Parameters.Add("@pDato", SqlDbType.VarChar).Value = dato;
                         oSqlCommand.CommandType = CommandType.StoredProcedure;
@@ -26,16 +25,16 @@ namespace Sistema_C_V_DarioVaez.Models.Mod_Compra.Pro_Marca
                         {
                             while (oSqlDataReader.Read())
                             {
-                                Pro_MarcaBE oPro_MarcaBE = new Pro_MarcaBE();
-                                oPro_MarcaBE.i_idMarca = (int)(oSqlDataReader["i_idMarca"]);
-                                oPro_MarcaBE.vc_dscpMarca = (string)(oSqlDataReader["vc_dscpMarca"]);
-                                oListPro_MarcaBE.Add(oPro_MarcaBE);
+                                Cprb_Guia_RemisionBE oCprb_Guia_RemisionBE = new Cprb_Guia_RemisionBE();
+                                oCprb_Guia_RemisionBE.oComprobanteBE.i_idComprobante = (int)(oSqlDataReader["i_idComprobante"]);
+                                oCprb_Guia_RemisionBE.oMotivo_TrasladoBE.i_idMtvTraslado = (int)(oSqlDataReader["i_idMtvTraslado"]);
+                                oListCprb_Guia_Remision.Add(oCprb_Guia_RemisionBE);
                             }
                             oSqlDataReader.Close();
                         }
                     }
                     conexion.Close();
-                    return oListPro_MarcaBE;
+                    return oListCprb_Guia_Remision;
                 }
                 catch (System.Exception e)
                 {
@@ -44,5 +43,6 @@ namespace Sistema_C_V_DarioVaez.Models.Mod_Compra.Pro_Marca
                 }
             }
         }
+
     }
 }

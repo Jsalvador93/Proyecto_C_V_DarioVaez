@@ -5,20 +5,19 @@ using System.Web;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace Sistema_C_V_DarioVaez.Models.Mod_Compra.Pro_Marca
+namespace Sistema_C_V_DarioVaez.Models.Mod_Venta.Cprb_Factura
 {
-    public class Pro_MarcaDA
+    public class Cprb_FacturaDA
     {
-        
-        public List<Pro_MarcaBE> ListaRegistroMarca(string dato)
+        public List<Cprb_FacturaBE> ListaRegistroFactura(string dato)
         {
-            List<Pro_MarcaBE> oListPro_MarcaBE = new List<Pro_MarcaBE>();
+            List<Cprb_FacturaBE> oListCpr_FacturaBE = new List<Cprb_FacturaBE>();
             using (SqlConnection conexion = Conexion.ConnectionManager.GetConnection())
             {
                 try
                 {
                     conexion.Open();
-                    using (SqlCommand oSqlCommand = new SqlCommand("SP_PRO_LC_MARCA", conexion))
+                    using (SqlCommand oSqlCommand = new SqlCommand("SP_CPRB_LC_FACTURA", conexion))
                     {
                         oSqlCommand.Parameters.Add("@pDato", SqlDbType.VarChar).Value = dato;
                         oSqlCommand.CommandType = CommandType.StoredProcedure;
@@ -26,16 +25,18 @@ namespace Sistema_C_V_DarioVaez.Models.Mod_Compra.Pro_Marca
                         {
                             while (oSqlDataReader.Read())
                             {
-                                Pro_MarcaBE oPro_MarcaBE = new Pro_MarcaBE();
-                                oPro_MarcaBE.i_idMarca = (int)(oSqlDataReader["i_idMarca"]);
-                                oPro_MarcaBE.vc_dscpMarca = (string)(oSqlDataReader["vc_dscpMarca"]);
-                                oListPro_MarcaBE.Add(oPro_MarcaBE);
+                                Cprb_FacturaBE oCprb_FacturaBE = new Cprb_FacturaBE();
+                                oCprb_FacturaBE.f_opGrabada = (Double)(oSqlDataReader["f_opGrabada"]);
+                                oCprb_FacturaBE.f_opNoGrabada = (Double)(oSqlDataReader["f_opNoGrabada"]);
+                                oCprb_FacturaBE.f_impTotalFactura = (Double)(oSqlDataReader["f_impTotalFactura"]);
+                                oCprb_FacturaBE.oComprobanteBE.i_idComprobante = (int)(oSqlDataReader["i_idComprobante"]);
+                                oListCpr_FacturaBE.Add(oCprb_FacturaBE);
                             }
                             oSqlDataReader.Close();
                         }
                     }
                     conexion.Close();
-                    return oListPro_MarcaBE;
+                    return oListCpr_FacturaBE;
                 }
                 catch (System.Exception e)
                 {
@@ -44,5 +45,6 @@ namespace Sistema_C_V_DarioVaez.Models.Mod_Compra.Pro_Marca
                 }
             }
         }
+
     }
 }

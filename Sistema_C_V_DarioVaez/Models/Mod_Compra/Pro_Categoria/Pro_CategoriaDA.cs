@@ -5,20 +5,20 @@ using System.Web;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace Sistema_C_V_DarioVaez.Models.Mod_Compra.Pro_Marca
+namespace Sistema_C_V_DarioVaez.Models.Mod_Compra.Pro_Categoria
 {
-    public class Pro_MarcaDA
-    {
+	public class Pro_CategoriaDA
+	{
         
-        public List<Pro_MarcaBE> ListaRegistroMarca(string dato)
+            public List<Pro_CategoriaBE> ListaRegistroCategoria(string dato)
         {
-            List<Pro_MarcaBE> oListPro_MarcaBE = new List<Pro_MarcaBE>();
+            List<Pro_CategoriaBE> oListPro_CategoriaBE = new List<Pro_CategoriaBE>();
             using (SqlConnection conexion = Conexion.ConnectionManager.GetConnection())
             {
                 try
                 {
                     conexion.Open();
-                    using (SqlCommand oSqlCommand = new SqlCommand("SP_PRO_LC_MARCA", conexion))
+                    using (SqlCommand oSqlCommand = new SqlCommand("SP_PRO_LC_CATEGORIA", conexion))
                     {
                         oSqlCommand.Parameters.Add("@pDato", SqlDbType.VarChar).Value = dato;
                         oSqlCommand.CommandType = CommandType.StoredProcedure;
@@ -26,16 +26,16 @@ namespace Sistema_C_V_DarioVaez.Models.Mod_Compra.Pro_Marca
                         {
                             while (oSqlDataReader.Read())
                             {
-                                Pro_MarcaBE oPro_MarcaBE = new Pro_MarcaBE();
-                                oPro_MarcaBE.i_idMarca = (int)(oSqlDataReader["i_idMarca"]);
-                                oPro_MarcaBE.vc_dscpMarca = (string)(oSqlDataReader["vc_dscpMarca"]);
-                                oListPro_MarcaBE.Add(oPro_MarcaBE);
+                                Pro_CategoriaBE oPro_CategoriaBE = new Pro_CategoriaBE();
+                                oPro_CategoriaBE.i_idCategoria = (int)(oSqlDataReader["i_idCategoria"]);
+                                oPro_CategoriaBE.vc_dscpCategoria = (string)(oSqlDataReader["vc_dscpCategoria"]);
+                                oListPro_CategoriaBE.Add(oPro_CategoriaBE);
                             }
                             oSqlDataReader.Close();
                         }
                     }
                     conexion.Close();
-                    return oListPro_MarcaBE;
+                    return oListPro_CategoriaBE;
                 }
                 catch (System.Exception e)
                 {
@@ -44,5 +44,6 @@ namespace Sistema_C_V_DarioVaez.Models.Mod_Compra.Pro_Marca
                 }
             }
         }
-    }
+        }
+	}
 }

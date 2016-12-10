@@ -5,20 +5,19 @@ using System.Web;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace Sistema_C_V_DarioVaez.Models.Mod_Compra.Pro_Marca
+namespace Sistema_C_V_DarioVaez.Models.Mod_Compra.Pro_Unidad
 {
-    public class Pro_MarcaDA
+    public class Pro_UnidadDA
     {
-        
-        public List<Pro_MarcaBE> ListaRegistroMarca(string dato)
+        public List<Pro_UnidadBE> ListaRegistroUnidad(String dato)
         {
-            List<Pro_MarcaBE> oListPro_MarcaBE = new List<Pro_MarcaBE>();
+            List<Pro_UnidadBE> oList_Pro_UnidadBE = new List<Pro_UnidadBE>();
             using (SqlConnection conexion = Conexion.ConnectionManager.GetConnection())
             {
                 try
                 {
                     conexion.Open();
-                    using (SqlCommand oSqlCommand = new SqlCommand("SP_PRO_LC_MARCA", conexion))
+                    using (SqlCommand oSqlCommand = new SqlCommand("SP_PRO_LC_UNIDAD", conexion))
                     {
                         oSqlCommand.Parameters.Add("@pDato", SqlDbType.VarChar).Value = dato;
                         oSqlCommand.CommandType = CommandType.StoredProcedure;
@@ -26,16 +25,16 @@ namespace Sistema_C_V_DarioVaez.Models.Mod_Compra.Pro_Marca
                         {
                             while (oSqlDataReader.Read())
                             {
-                                Pro_MarcaBE oPro_MarcaBE = new Pro_MarcaBE();
-                                oPro_MarcaBE.i_idMarca = (int)(oSqlDataReader["i_idMarca"]);
-                                oPro_MarcaBE.vc_dscpMarca = (string)(oSqlDataReader["vc_dscpMarca"]);
-                                oListPro_MarcaBE.Add(oPro_MarcaBE);
+                                Pro_UnidadBE oPro_UnidadBE = new Pro_UnidadBE();
+                                oPro_UnidadBE.i_idUnidad = (int)(oSqlDataReader["i_idUnidad"]);
+                                oPro_UnidadBE.vc_dscpUnidad = (string)(oSqlDataReader["vc_dscpUnidad"]);
+                                oList_Pro_UnidadBE.Add(oPro_UnidadBE);
                             }
                             oSqlDataReader.Close();
                         }
                     }
                     conexion.Close();
-                    return oListPro_MarcaBE;
+                    return oList_Pro_UnidadBE;
                 }
                 catch (System.Exception e)
                 {
@@ -43,6 +42,8 @@ namespace Sistema_C_V_DarioVaez.Models.Mod_Compra.Pro_Marca
                     return null;
                 }
             }
+
         }
+
     }
 }
