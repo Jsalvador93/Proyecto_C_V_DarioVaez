@@ -5,20 +5,19 @@ using System.Web;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace Sistema_C_V_DarioVaez.Models.Mod_Compra.Pro_Marca
+namespace Sistema_C_V_DarioVaez.Models.Mod_Compra.Pro_SubCategoria
 {
-    public class Pro_MarcaDA
+    public class Pro_SubCategoriaDA
     {
-        
-        public List<Pro_MarcaBE> ListaRegistroMarca(string dato)
+        public List<Pro_SubCategoriaBE> ListaRegistroSubCategoria(string dato)
         {
-            List<Pro_MarcaBE> oListPro_MarcaBE = new List<Pro_MarcaBE>();
+            List<Pro_SubCategoriaBE> oListPro_SubCategoriaBE = new List<Pro_SubCategoriaBE>();
             using (SqlConnection conexion = Conexion.ConnectionManager.GetConnection())
             {
                 try
                 {
                     conexion.Open();
-                    using (SqlCommand oSqlCommand = new SqlCommand("SP_PRO_LC_MARCA", conexion))
+                    using (SqlCommand oSqlCommand = new SqlCommand("SP_PRO_LC_SUBCATEGORIA", conexion))
                     {
                         oSqlCommand.Parameters.Add("@pDato", SqlDbType.VarChar).Value = dato;
                         oSqlCommand.CommandType = CommandType.StoredProcedure;
@@ -26,16 +25,17 @@ namespace Sistema_C_V_DarioVaez.Models.Mod_Compra.Pro_Marca
                         {
                             while (oSqlDataReader.Read())
                             {
-                                Pro_MarcaBE oPro_MarcaBE = new Pro_MarcaBE();
-                                oPro_MarcaBE.i_idMarca = (int)(oSqlDataReader["i_idMarca"]);
-                                oPro_MarcaBE.vc_dscpMarca = (string)(oSqlDataReader["vc_dscpMarca"]);
-                                oListPro_MarcaBE.Add(oPro_MarcaBE);
+                                Pro_SubCategoriaBE oPro_SubCategoriaBE = new Pro_SubCategoriaBE();
+                                oPro_SubCategoriaBE.i_idSubcategoria = (int)(oSqlDataReader["i_idSubcategoria"]);
+                                oPro_SubCategoriaBE.vc_dscpSubCategoria = (string)(oSqlDataReader["vc_dscpSubCategoria"]);
+                                oPro_SubCategoriaBE.oCategoria.vc_dscpCategoria = (string)(oSqlDataReader["vc_dscpCategoria"]);
+                                oListPro_SubCategoriaBE.Add(oPro_SubCategoriaBE);
                             }
                             oSqlDataReader.Close();
                         }
                     }
                     conexion.Close();
-                    return oListPro_MarcaBE;
+                    return oListPro_SubCategoriaBE;
                 }
                 catch (System.Exception e)
                 {

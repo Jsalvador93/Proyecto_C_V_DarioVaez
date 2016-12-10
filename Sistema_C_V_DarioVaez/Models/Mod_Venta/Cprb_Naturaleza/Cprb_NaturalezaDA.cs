@@ -5,38 +5,39 @@ using System.Web;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace Sistema_C_V_DarioVaez.Models.Mod_Compra.Pro_Marca
+namespace Sistema_C_V_DarioVaez.Models.Mod_Venta.Cprb_Naturaleza
 {
-    public class Pro_MarcaDA
+    public class Cprb_NaturalezaDA
     {
-        
-        public List<Pro_MarcaBE> ListaRegistroMarca(string dato)
+        public List<Cprb_NaturalezaBE> ListaRegistroNaturaleza(string dato)
         {
-            List<Pro_MarcaBE> oListPro_MarcaBE = new List<Pro_MarcaBE>();
+            List<Cprb_NaturalezaBE> oListCprb_NaturalezaBE = new List<Cprb_NaturalezaBE>();
             using (SqlConnection conexion = Conexion.ConnectionManager.GetConnection())
             {
                 try
                 {
                     conexion.Open();
-                    using (SqlCommand oSqlCommand = new SqlCommand("SP_PRO_LC_MARCA", conexion))
+                    using (SqlCommand oSqlCommand = new SqlCommand("SP_CPRB_LC_NATURALEZA", conexion))
                     {
                         oSqlCommand.Parameters.Add("@pDato", SqlDbType.VarChar).Value = dato;
                         oSqlCommand.CommandType = CommandType.StoredProcedure;
-                        using (SqlDataReader oSqlDataReader = oSqlCommand.ExecuteReader())
+                        SqlDataReader oSqlDataReader = oSqlCommand.ExecuteReader();
                         {
                             while (oSqlDataReader.Read())
                             {
-                                Pro_MarcaBE oPro_MarcaBE = new Pro_MarcaBE();
-                                oPro_MarcaBE.i_idMarca = (int)(oSqlDataReader["i_idMarca"]);
-                                oPro_MarcaBE.vc_dscpMarca = (string)(oSqlDataReader["vc_dscpMarca"]);
-                                oListPro_MarcaBE.Add(oPro_MarcaBE);
+                                Cprb_NaturalezaBE oCprb_Naturaleza = new Cprb_NaturalezaBE();
+                                oCprb_Naturaleza.i_idNaturaleza = (int)(oSqlDataReader["i_idNaturaleza"]);
+                                oCprb_Naturaleza.vc_dscpNaturaleza = (string)(oSqlDataReader["vc_dscpNaturaleza"]);
+                                oListCprb_NaturalezaBE.Add(oCprb_Naturaleza);
                             }
+
                             oSqlDataReader.Close();
                         }
                     }
                     conexion.Close();
-                    return oListPro_MarcaBE;
+                    return oListCprb_NaturalezaBE;
                 }
+
                 catch (System.Exception e)
                 {
 

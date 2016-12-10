@@ -5,20 +5,19 @@ using System.Web;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace Sistema_C_V_DarioVaez.Models.Mod_Compra.Pro_Marca
+namespace Sistema_C_V_DarioVaez.Models.Mod_Venta.Cprb_Ticket
 {
-    public class Pro_MarcaDA
+    public class Cprb_TicketDA
     {
-        
-        public List<Pro_MarcaBE> ListaRegistroMarca(string dato)
+        public List<Cprb_TicketBE> ListaRegistroTicket(string dato)
         {
-            List<Pro_MarcaBE> oListPro_MarcaBE = new List<Pro_MarcaBE>();
+            List<Cprb_TicketBE> oListCpr_TicketBE = new List<Cprb_TicketBE>();
             using (SqlConnection conexion = Conexion.ConnectionManager.GetConnection())
             {
                 try
                 {
                     conexion.Open();
-                    using (SqlCommand oSqlCommand = new SqlCommand("SP_PRO_LC_MARCA", conexion))
+                    using (SqlCommand oSqlCommand = new SqlCommand("SP_CPRB_LC_TICKET", conexion))
                     {
                         oSqlCommand.Parameters.Add("@pDato", SqlDbType.VarChar).Value = dato;
                         oSqlCommand.CommandType = CommandType.StoredProcedure;
@@ -26,16 +25,18 @@ namespace Sistema_C_V_DarioVaez.Models.Mod_Compra.Pro_Marca
                         {
                             while (oSqlDataReader.Read())
                             {
-                                Pro_MarcaBE oPro_MarcaBE = new Pro_MarcaBE();
-                                oPro_MarcaBE.i_idMarca = (int)(oSqlDataReader["i_idMarca"]);
-                                oPro_MarcaBE.vc_dscpMarca = (string)(oSqlDataReader["vc_dscpMarca"]);
-                                oListPro_MarcaBE.Add(oPro_MarcaBE);
+                                Cprb_TicketBE oCprb_TicketBE = new Cprb_TicketBE();
+                                oCprb_TicketBE.f_opGravada = (double)(oSqlDataReader["f_opGravada"]);
+                                oCprb_TicketBE.f_opNoGravada = (double)(oSqlDataReader["f_opNoGravada"]);
+                                oCprb_TicketBE.f_impTotTicket = (double)(oSqlDataReader)["f_impTotTicket"];
+                                oCprb_TicketBE.oComprobanteBE.i_idComprobante = (int)(oSqlDataReader["i_idComprobante"]);
+                                oListCpr_TicketBE.Add(oCprb_TicketBE);
                             }
                             oSqlDataReader.Close();
                         }
                     }
                     conexion.Close();
-                    return oListPro_MarcaBE;
+                    return oListCpr_TicketBE;
                 }
                 catch (System.Exception e)
                 {
