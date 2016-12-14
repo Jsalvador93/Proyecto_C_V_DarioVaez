@@ -24,7 +24,7 @@ namespace Sistema_C_V_DarioVaez.Models.Mod_Venta.Cprb_Motivo_Traslado
                         oSqlCommand.CommandType = CommandType.StoredProcedure;
                         using (SqlDataReader oSqlDataReader = oSqlCommand.ExecuteReader())
                         {
-                            while (oSqlDataReader.Read()) ;
+                            while (oSqlDataReader.Read()) 
                             {
                                 Cprb_Motivo_TrasladoBE oCprb_Motivo_TrasladoBE = new Cprb_Motivo_TrasladoBE();
                                 oCprb_Motivo_TrasladoBE.i_idMtvTraslado = (int)(oSqlDataReader["i_idMtvTraslado"]);

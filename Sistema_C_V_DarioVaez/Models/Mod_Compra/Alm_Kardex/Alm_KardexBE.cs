@@ -12,7 +12,7 @@ namespace Sistema_C_V_DarioVaez.Models.Mod_Compra.Alm_Kardex
         public DateTime dt_fchFin { get; set; }
         public Boolean b_krdNaturaleza { get; set; }
         public Pro_Producto.Pro_ProductoBE oProductoBE { get; set; }
-        public List<Alm_Kadex_DetalleBE> oListKardexDetalle { get; set; }
+        public List<Alm_Kardex_DetalleBE> oListKardexDetalle { get; set; }
         public List<Alm_KardexBE> oListKardex { get; set; }
 
         //public int i_idPtoVenta { get; set; } <---- Llama a la tabla Emp_Punto_Venta
@@ -21,7 +21,7 @@ namespace Sistema_C_V_DarioVaez.Models.Mod_Compra.Alm_Kardex
         {
             oProductoBE = new Pro_Producto.Pro_ProductoBE();
             //oPtoVenta
-            oListKardexDetalle = new List<Alm_Kadex_DetalleBE>();
+            oListKardexDetalle = new List<Alm_Kardex_DetalleBE>();
             oListKardex = new List<Alm_KardexBE>();
             
         }
