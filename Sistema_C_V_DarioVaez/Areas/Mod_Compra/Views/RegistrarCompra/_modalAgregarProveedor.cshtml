@@ -1,4 +1,8 @@
-﻿
+﻿@{
+    ViewBag.Title = "_modalAgregarProveedor";
+}
+
+
 <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
     <div class="col-lg-12">
@@ -10,21 +14,21 @@
         <form>
             <div class="col-md-12">
                 <div class="form-group">
-                    <h4 class="col-md-3">Código de Persona:</h4>
+                    @Html.Label("labelCodigoPersona", "Código de Persona:", new { @class = "col-md-3 h4" })
                     <h4 class="col-md-5">P0001</h4>
-                    <h4 class="col-md-2">Fecha:</h4>
+                    @Html.Label("labelFecha", "Fecha:", new { @class = "col-md-2 h4" })
                     <h4 class="col-md-2">10/11/2016</h4>
                 </div>
             </div>
             <div class="col-md-12">
                 <div class="form-group">
-                    <h4 class="col-md-3">Naturaleza:</h4>
+                    @Html.Label("labelNaturalez", "Naturaleza:", new { @class = "col-md-3 h4" })
                     <div class="col-md-3">
                         <select class="form-control">
                             <option>Juridica</option>
                         </select>
                     </div>
-                    <h4 class="col-md-3">TIpo de Persona:</h4>
+                    @Html.Label("labelTipoPersona", "Tipo de Persona:", new { @class = "col-md-3 h4" })
                     <div class="col-md-3">
                         <select class="form-control">
                             <option>Seleccionar</option>
@@ -35,7 +39,7 @@
             </div>
             <div class="col-md-12">
                 <div class="form-group">
-                    <h4 class="col-md-2">Nombres :</h4>
+                    @Html.Label("labelNombres", "Nombres :", new { @class = "col-md-2 h4" })
                     <div class="col-md-4">
                         <input class="form-control input-sm" type="text" placeholder="Nombre Completo">
                     </div>
@@ -43,11 +47,11 @@
             </div>
             <div class="col-md-12">
                 <div class="form-group">
-                    <h4 class="col-md-3">N° Documento:</h4>
+                    @Html.Label("labelNDocumento", "N° Documento:", new { @class = "col-md-3 h4" })
                     <div class="col-md-3">
                         <input class="form-control input-sm" type="text" placeholder="Nombre Completo">
                     </div>
-                    <h4 class="col-md-2">Teléfono:</h4>
+                    @Html.Label("labelTelefono", "Teléfono:", new { @class = "col-md-2 h4" })
                     <div class="col-md-4">
                         <input class="form-control input-sm" type="text" placeholder="Teléfono:">
                     </div>
@@ -55,8 +59,8 @@
             </div>
             <div class="col-md-12">
                 <form>
-                    <h4 class="col-md-6">Dirección Web o Correo Electrónico :</h4>
-                    <h4 class="col-md-6">Dirección de Domicilio :</h4>
+                    @Html.Label("labelWebCorreo", "Dirección Web o Correo Electrónico :", new { @class = "col-md-6 h4" })
+                    @Html.Label("labelDomicilio", "Dirección de Domicilio :", new { @class = "col-md-6 h4" })
                 </form>
             </div>
             <div class="col-md-12">

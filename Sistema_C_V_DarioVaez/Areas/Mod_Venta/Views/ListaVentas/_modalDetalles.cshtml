@@ -1,4 +1,10 @@
 ﻿
+@{
+    ViewBag.Title = "_modalDetalles";
+}
+
+
+
 <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
     <div class="col-lg-12">
@@ -10,7 +16,7 @@
         <form>
             <div class="col-md-12">
                 <div class="form-group">
-                    <h4 class="col-md-3">Detalle de la Venta :</h4>
+                    @Html.Label("labelDetalle", "Detalle de la Venta :", new { @class = "col-md-3 h4" })    
                     <h4 class="col-md-3">V0001</h4>
                 </div>
             </div>
@@ -46,19 +52,22 @@
             <div class="col-md-12">
                 <div class="form-group">
                     <h4 class="col-md-2 pull-right">S/ 290.00</h4>
-                    <h4 class="col-md-2 pull-right">Sub Total :</h4>
+                    @Html.Label("labelSubTotal", "Sub Total :", new { @class = "col-md-2 pull-right h4" })
+                    
                 </div>
             </div>
             <div class="col-md-12">
                 <div class="form-group">
                     <h4 class="col-md-2 pull-right">S/ 0.00</h4>
-                    <h4 class="col-md-2 pull-right">IGV :</h4>
+                    @Html.Label("labelIGV", "IGV :", new { @class = "col-md-2 pull-right h4" })
+
                 </div>
             </div>
             <div class="col-md-12">
                 <div class="form-group">
                     <h4 class="col-md-2 pull-right">S/ 290.00</h4>
-                    <h4 class="col-md-2 pull-right">Total Neto :</h4>
+                    @Html.Label("labelTotalNeto", "Total Neto ", new { @class = "col-md-2 pull-right h4" })
+
                 </div>
             </div>
 

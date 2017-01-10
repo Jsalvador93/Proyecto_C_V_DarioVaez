@@ -1,4 +1,9 @@
 ﻿
+@{
+    ViewBag.Title = "_modalGenerar";
+}
+
+
 <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
     <div class="col-lg-12">
@@ -10,17 +15,18 @@
         <form>
             <div class="col-md-12">
                 <div class="form-group">
-                    <h4 class="col-md-3">Venta :</h4>
-                    <h4 class="col-md-3">V0001</h4>
-                    <h4 class="col-md-3">Fecha :</h4>
+                    
+                    @Html.Label("labelVenta", "Venta :", new { @class = "col-md-3 h4" })
+                    <h4 class="col-md-3">V0001</h4> 
+                    @Html.Label("labelFecha", "Fecha :", new { @class = "col-md-3 h4" })
                     <h4 class="col-md-3">10/11/2016</h4>
                 </div>
             </div>
             <div class="col-md-12">
                 <div class="form-group">
-                    <h4 class="col-md-3">Código Comprobante:</h4>
+                    @Html.Label("labelCodigoComprobante", "Código Comprobante:", new { @class = "col-md-3 h4" })
                     <h4 class="col-md-3">CP0001</h4>
-                    <h4 class="col-md-3">N° Comprobante:</h4>
+                    @Html.Label("labelNumeroComprobante", "N° Comprobante:", new { @class = "col-md-3 h4" })
                     <h4 class="col-md-3">1234567</h4>
                 </div>
             </div>
@@ -28,7 +34,8 @@
             <!-- Generar Comprobante -->
             <div class="col-md-12">
                 <form>
-                    <h4 class="col-md-3">Naturaleza:</h4>
+                    
+                    @Html.Label("labelNaturaleza", "Naturaleza:", new { @class = "col-md-3 h4" })
                     <div class="col-md-3">
                         <select class="form-control">
                             <option>Seleccionar</option>
@@ -36,7 +43,8 @@
                             <option>Opcion 2</option>
                         </select>
                     </div>
-                    <h4 class="col-md-3">Tipo Comprobante :</h4>
+                   
+                    @Html.Label("labelTipoComprobante", "Tipo Comprobante :", new { @class = "col-md-3 h4" })
                     <div class="col-md-3">
                         <select class="form-control" id="status" name="status" onChange="mostrar(this.value);">
                             <option>Seleccionar</option>
@@ -49,7 +57,7 @@
             </div>
             <div class="col-md-12">
                 <form>
-                    <h4 class="col-md-3">Modelo:</h4>
+                    @Html.Label("labelModelo", "Modelo:", new { @class = "col-md-3 h4" })
                     <div class="col-md-3">
                         <select class="form-control">
                             <option>Seleccionar</option>
@@ -57,7 +65,7 @@
                             <option>Opcion 2</option>
                         </select>
                     </div>
-                    <h4 class="col-md-3">Tipo de Cambio :</h4>
+                    @Html.Label("labelTipoCambio", "Tipo de Cambio :", new { @class = "col-md-3 h4" })
                     <div class="col-md-3">
                         <h4 class="col-md-3">S/0.00</h4>
                     </div>
@@ -68,9 +76,10 @@
                 <div class="col-md-12">
                     <h3 class="col-md-12">Ticket</h3>
                     <form>
-                        <h4 class="col-md-3">Registrador :</h4>
+                        
+                        @Html.Label("labelRegistrador", "Registrador :", new { @class = "col-md-3 h4" })
                         <h4 class="col-md-3">Usuario 1</h4>
-                        <h4 class="col-md-3">Cliente :</h4>
+                        @Html.Label("labelCliente", "Cliente :", new { @class = "col-md-3 h4" })
                         <h4 class="col-md-3">Nombre del Cliente</h4>
                     </form>
                 </div>
@@ -105,19 +114,19 @@
                 <div class="col-md-12">
                     <div class="form-group">
                         <h4 class="col-md-2 pull-right">S/ 290.00</h4>
-                        <h4 class="col-md-2 pull-right">Sub Total :</h4>
+                        @Html.Label("labelSubTotal", "Sub Total :", new { @class = "col-md-2 pull-right h4" })
                     </div>
                 </div>
                 <div class="col-md-12">
                     <div class="form-group">
                         <h4 class="col-md-2 pull-right">S/ 0.00</h4>
-                        <h4 class="col-md-2 pull-right">IGV :</h4>
+                        @Html.Label("labelIGV", "IGV :", new { @class = "col-md-2 pull-right h4" })
                     </div>
                 </div>
                 <div class="col-md-12">
                     <div class="form-group">
                         <h4 class="col-md-2 pull-right">S/ 290.00</h4>
-                        <h4 class="col-md-2 pull-right">Total Neto :</h4>
+                        @Html.Label("labelTotalNeto", "Total Neto :", new { @class = "col-md-2 pull-right h4" })
                     </div>
                 </div>
             </div>
@@ -128,7 +137,7 @@
                     <h3 class="col-md-12">Boleta</h3>
                 </div>
                 <div class="col-md-12">
-                    <h4 class="col-md-2">Cliente :</h4>
+                    @Html.Label("labelCliente", "Cliente :", new { @class = "col-md-2 h4" })
                     <h4 class="col-md-4">Nombre del Cliente</h4>
                 </div>
                 <div class="col-md-12">
@@ -162,7 +171,7 @@
                 <div class="col-md-12">
                     <div class="form-group">
                         <h4 class="col-md-2 pull-right">S/ 290.00</h4>
-                        <h4 class="col-md-2 pull-right">Total Neto :</h4>
+                        @Html.Label("labelTotalNeto", "Total Neto :", new { @class = "col-md-2 pull-right h4" })
                     </div>
                 </div>
 
@@ -174,7 +183,7 @@
                     <h3 class="col-md-12">Factura</h3>
                 </div>
                 <div class="col-md-12">
-                    <h4 class="col-md-2">Cliente :</h4>
+                    @Html.Label("labelCliente", "Cliente :", new { @class = "col-md-2 h4" })
                     <h4 class="col-md-4">Nombre del Cliente</h4>
                 </div>
                 <div class="col-md-12">
@@ -208,19 +217,19 @@
                 <div class="col-md-12">
                     <div class="form-group">
                         <h4 class="col-md-2 pull-right">S/ 290.00</h4>
-                        <h4 class="col-md-3 pull-right">Operación Gravada:</h4>
+                        @Html.Label("labelOperacionGravada", "Operación Gravada:", new { @class = "col-md-3 pull-right h4" })
                     </div>
                 </div>
                 <div class="col-md-12">
                     <div class="form-group">
                         <h4 class="col-md-2 pull-right">S/ 0.00</h4>
-                        <h4 class="col-md-3 pull-right">Operación no Gravada:</h4>
+                        @Html.Label("labelOperacionNoGravada", "Operación no Gravada:", new { @class = "col-md-3 pull-right h4" })
                     </div>
                 </div>
                 <div class="col-md-12">
                     <div class="form-group">
                         <h4 class="col-md-2 pull-right">S/ 290.00</h4>
-                        <h4 class="col-md-2 pull-right">Total Neto :</h4>
+                        @Html.Label("labelTotalNeto", "Total Neto :", new { @class = "col-md-2 pull-right h4" })
                     </div>
                 </div>
 

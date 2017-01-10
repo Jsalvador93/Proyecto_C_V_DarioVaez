@@ -27,15 +27,15 @@
                         <div class="form-group">
                             <div class="box-body">
                                 <div class="col-md-12">
-                                    <h4 class="col-md-3">Codigo de Venta : </h4>
+                                    @Html.Label("labelCodigoVenta", "Codigo de Venta :", new { @class = "col-md-3 h4" })
                                     <h4 class="col-md-3">00001</h4>
-                                    <h4 class="col-md-2">Fecha:</h4>
-                                    <h4 class="col-md-4">12/11/2016</h4>
+                                    @Html.Label("labelFecha", "Fecha:", new { @class = "col-md-2 h4" })
+                                    <h4 class="col-md-4">@DateTime.Now.ToShortDateString()</h4>
                                 </div>
                                 <div class="col-md-12">
-                                    <h4 class="col-md-3">Registrador : </h4>
+                                    @Html.Label("labelRegistrador", "Registrador :", new { @class = "col-md-3 h4" })
                                     <h4 class="col-md-3">Nombre de Usuario </h4>
-                                    <h4 class="col-md-2 text-left">Cliente :</h4>
+                                    @Html.Label("labelCliente", "Cliente :", new { @class = "col-md-2 h4" })
 
                                     <div class="col-md-4">
                                         <div class="input-group clockpicker">
@@ -64,7 +64,7 @@
                                 <div>
                                     <div class="col-md-12">
 
-                                        <h4 class="col-md-2">Producto : </h4>
+                                        @Html.Label("labelProducto", "Producto :", new { @class = "col-md-2 h4" })
                                         <div class="col-md-4">
                                             <div class="input-group clockpicker">
                                                 <input type="text" class="form-control">
@@ -74,9 +74,9 @@
                                             </div>
                                         </div>
 
-                                        <h4 class="col-md-1">Precio:</h4>
+                                        @Html.Label("labelPrecio", "Precio:", new { @class = "col-md-1 h4" })
                                         <h4 class="col-md-1"> S/.70.00</h4>
-                                        <h4 class="col-md-1">Cantidad:</h4>
+                                        @Html.Label("labelCantidad", "Cantidad:", new { @class = "col-md-1 h4" })
 
                                         <div class="col-md-3">
                                             <select class="form-control">
@@ -182,13 +182,13 @@
                                     </div>
 
                                     <div class="ExampleSubTotal">
-                                        <h4 class="col-md-10">Sub Totral : </h4>
+                                        @Html.Label("labelSubTotal", "Sub Total :", new { @class = "col-md-10 h4" })
                                         <h4 class="col-md-2">S/. 290.00</h4>
 
-                                        <h4 class="col-md-10">IGV : </h4>
+                                        @Html.Label("labelIGV", "IGV :", new { @class = "col-md-10 h4" })
                                         <h4 class="col-md-2">S/. 0.00</h4>
 
-                                        <h4 class="col-md-10">Total Neto : </h4>
+                                        @Html.Label("labelTotalNeto", "Total Neto :", new { @class = "col-md-10 h4" })
                                         <h4 class="col-md-2">S/. 290.00</h4>
                                     </div>
 

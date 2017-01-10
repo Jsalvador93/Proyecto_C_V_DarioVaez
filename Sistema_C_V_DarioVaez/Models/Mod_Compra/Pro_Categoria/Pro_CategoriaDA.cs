@@ -46,4 +46,3 @@ namespace Sistema_C_V_DarioVaez.Models.Mod_Compra.Pro_Categoria
         }
         }
 	}
-}

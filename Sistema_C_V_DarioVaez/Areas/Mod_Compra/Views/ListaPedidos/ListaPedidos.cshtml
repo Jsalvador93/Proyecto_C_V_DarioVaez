@@ -31,8 +31,8 @@
                                         <a href="@Url.Action("RegistrarPedidos" , "RegistrarPedidos", new { area = "Mod_Compra" } )"><button type="button" class="btn btn-block btn-primary">Solicitar Pedido</button></a>
                                     </div>
                                     <div class="FechaForm1">
-                                        <h4 class="col-md-8">Fecha:</h4>
-                                        <h4 class="col-md-2">12/11/2016</h4>
+                                        @Html.Label("labelFecha", "Fecha :", new { @class = "col-md-8 h4" })
+                                        <h4 class="col-md-2">@DateTime.Now.ToShortDateString()</h4>
                                     </div>
                                     <style>
                                         .FechaForm1 {
@@ -51,7 +51,7 @@
                         <div class="form-group">
                             <div class="box-body">
                                 <div>
-                                    <h4 class="col-md-3 text-left">Fecha Inicio - Fin :</h4>
+                                    @Html.Label("labelFechaIF", "Fecha Inicio - Fin :", new { @class = "col-md-3 h4" })
                                     <!-- Boton de DateRange -->
                                     <div class="col-md-3">
                                         <div class="form-group">
@@ -65,7 +65,7 @@
                                     </div>
                                     <!-- Boton de DateRange -->
 
-                                    <h4 class="col-md-3 text-left">Codigo de Pedido:</h4>
+                                    @Html.Label("labelCodigoPedido", "Codigo de Pedido:", new { @class = "col-md-3 h4" })
                                     <!-- Boton de Busqueda -->
                                     <div class="col-md-3">
                                         <div class="input-group">
@@ -250,7 +250,7 @@
     <!-- Main content -->
 </div>
 <!-- Primer Modal - Detalle Pedidos-->
-<div class="modal fade example1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div class="modal fade example1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-backdrop = "static">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             @Html.Partial("_modalDetalle")
@@ -259,7 +259,7 @@
 </div>
 <!-- Primer Modal - Detalle Pedidos-->
 <!-- Segundo Modal - Generar Pedidos-->
-<div class="modal fade example2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div class="modal fade example2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-backdrop = "static">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             @Html.Partial("_modalGenerar")

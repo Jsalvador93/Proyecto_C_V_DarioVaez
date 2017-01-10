@@ -1,4 +1,9 @@
-﻿<div class="modal-header">
+﻿
+@{
+    ViewBag.Title = "_modalSeleccionarProducto";
+}
+
+<div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
     <div class="col-lg-12">
         <h3 class="modal-title" id="exampleModalLabel">Seleccionar Producto</h3>
@@ -9,7 +14,8 @@
         <form>
             <div class="col-md-12">
                 <div class="form-group">
-                    <h4 class="col-md-3">Codigo Producto :</h4>
+
+                    @Html.Label("labelCodigoProducto", "Codigo Producto :", new { @class = "col-md-3 h4" })
                     <div class="col-md-3">
                         <div class="input-group">
                             <input type="text" name="q" class="form-control" placeholder="Search...">
@@ -25,11 +31,12 @@
 
             <div class="col-md-12">
                 <div class="form-group">
-                    <h4 class="col-md-2">Seccion :</h4>
-                    <h4 class="col-md-3">Tipo Producto:</h4>
-                    <h4 class="col-md-2">Marca:</h4>
-                    <h4 class="col-md-2">Categoria:</h4>
-                    <h4 class="col-md-3">Sub Categoria:</h4>
+                    @Html.Label("labelSeccion", "Seccion :", new { @class = "col-md-2 h4" })
+                    @Html.Label("labelTipoProducto", "Tipo Producto:", new { @class = "col-md-3 h4" })
+                    @Html.Label("labelMarca", "Marca:", new { @class = "col-md-2 h4" })
+                    @Html.Label("labelCategoria", "Categoria:", new { @class = "col-md-2 h4" })
+                    @Html.Label("labelSubCategoria", "Sub Categoria:", new { @class = "col-md-3 h4" })
+
                 </div>
             </div>
             <div class="col-md-12">

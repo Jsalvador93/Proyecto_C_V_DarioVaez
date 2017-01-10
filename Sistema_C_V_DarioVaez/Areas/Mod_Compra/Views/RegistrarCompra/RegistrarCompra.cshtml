@@ -27,15 +27,15 @@
                         <div class="form-group">
                             <div class="box-body">
                                 <div class="col-md-12">
-                                    <h4 class="col-md-3">Codigo de Compra : </h4>
+                                    @Html.Label("labelCodigoCompra", "Codigo de Compra :", new { @class = "col-md-3 h4" })
                                     <h4 class="col-md-4">00001</h4>
-                                    <h4 class="col-md-2">Fecha :</h4>
-                                    <h4 class="col-md-3">12/11/2016</h4>
+                                    @Html.Label("labelFecha", "Fecha :", new { @class = "col-md-2 h4" })
+                                    <h4 class="col-md-3">@DateTime.Now.ToShortDateString()</h4>
                                 </div>
                                 <div class="col-md-12">
-                                    <h4 class="col-md-3">Tipo Comprobante : </h4>
+                                    @Html.Label("labelTipoComprobante", "Tipo Comprobante :", new { @class = "col-md-3 h4" })
                                     <h4 class="col-md-4">Factura </h4>
-                                    <h4 class="col-md-2 text-left">N° Comprobante:</h4>
+                                    @Html.Label("labelNComprobante", "N° Comprobante:", new { @class = "col-md-2 h4" })
                                     <div class="col-md-3">
                                         <input class="form-control input-sm" type="text" placeholder="12345">
                                     </div>
@@ -55,7 +55,7 @@
                         <div class="form-group">
                             <div class="box-body">
                                 <div class="col-md-12">
-                                    <h4 class="col-md-2">Comprador : </h4>
+                                    @Html.Label("labelComprador", "Comprador :", new { @class = "col-md-2 h4" })
                                     <div class="col-md-4">
                                         <div class="input-group clockpicker">
                                             <input type="text" class="form-control">
@@ -65,7 +65,7 @@
                                         </div>
                                     </div>
 
-                                    <h4 class="col-md-3">Fecha de Compra:</h4>
+                                    @Html.Label("labelFechaCompra", "Fecha de Compra:", new { @class = "col-md-3 h4" })
                                     <div class="col-md-3">
                                         <div class="input-group date">
                                             <div class="input-group-addon">
@@ -77,9 +77,9 @@
                                 </div>
 
                                 <div class="col-md-12">
-                                    <h4 class="col-md-2">Registrador : </h4>
+                                    @Html.Label("labelRegistrador", "Registrador :", new { @class = "col-md-2 h4" })
                                     <h4 class="col-md-4">Nombre del Usuario</h4>
-                                    <h4 class="col-md-2">Proveedor : </h4>
+                                    @Html.Label("labelProveedor", "Proveedor : ", new { @class = "col-md-2 h4" })
                                     <div class="col-md-4">
                                         <div class="input-group clockpicker">
                                             <input type="text" class="form-control">
@@ -102,7 +102,7 @@
                                 <div>
                                     <div class="col-md-12">
 
-                                        <h4 class="col-md-2">Pedido : </h4>
+                                        @Html.Label("labelPedido", "Pedido :", new { @class = "col-md-2 h4" })
                                         <div class="col-md-4">
                                             <div class="input-group clockpicker">
                                                 <input type="text" class="form-control">
@@ -198,13 +198,13 @@
                                     </div>
 
                                     <div class="ExampleSubTotal">
-                                        <h4 class="col-md-9">Sub Totral : </h4>
+                                        @Html.Label("labelSubTotal", "Sub Total :", new { @class = "col-md-9 h4" })
                                         <h4 class="col-md-3">S/. 290.00</h4>
 
-                                        <h4 class="col-md-9">IGV : </h4>
+                                        @Html.Label("labelIGV", "IGV :", new { @class = "col-md-9 h4" })
                                         <h4 class="col-md-3">S/. 0.00</h4>
 
-                                        <h4 class="col-md-9">Total Neto : </h4>
+                                        @Html.Label("labelTotalNeto", "TotalNeto :", new { @class = "col-md-9 h4" })
                                         <h4 class="col-md-3">S/. 290.00</h4>
                                     </div>
 
@@ -230,7 +230,7 @@
 </div>
 
 <!-- Primer Modal - modal Agregar Comprador-->
-<div class="modal fade example1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div class="modal fade example1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-backdrop = "static">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             @Html.Partial("_modalAgregarComprador")
@@ -239,7 +239,7 @@
 </div>
 <!-- Primer Modal - modal Agregar Comprador-->
 <!-- Segundo Modal - modal Agregar Proveedor-->
-<div class="modal fade example2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div class="modal fade example2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-backdrop = "static">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             @Html.Partial("_modalAgregarProveedor")
@@ -248,7 +248,7 @@
 </div>
 <!-- Segundo Modal - modal Agregar Proveedor-->
 <!-- Tercer Modal - modal Agregar Pedido-->
-<div class="modal fade example3" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div class="modal fade example3" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-backdrop = "static">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             @Html.Partial("_modalAgregarPedido")

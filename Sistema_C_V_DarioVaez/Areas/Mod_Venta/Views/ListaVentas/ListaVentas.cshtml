@@ -3,6 +3,8 @@
     ViewBag.Title = "ListaVentas";
     Layout = "~/Views/Shared/Plantilla.cshtml";
 }
+@using (Html.BeginForm())
+{
 
 <div class="content">
     <!-- Encabezado Body -->
@@ -27,11 +29,11 @@
                             <div class="box-body">
                                 <div>
                                     <div class="col-md-2">
-                                        <a href="@Url.Action("RegistrarVenta" , "RegistrarVenta", new { area = "Mod_Venta" } )"><button type="button" class="btn btn-block btn-primary">Registrar Venta</button></a>
+                                        <a href="@Url.Action("RegistrarVenta", "RegistrarVenta", new { area = "Mod_Venta" })"><button type="button" class="btn btn-block btn-primary">Registrar Venta</button></a>
                                     </div>
                                     <div class="FechaForm1">
-                                        <h4 class="col-md-8">Fecha:</h4>
-                                        <h4 class="col-md-2">12/11/2016</h4>
+                                        @Html.Label("labelFecha", "Fecha :", new { @class = "col-md-8 h4" })   
+                                        <h4 class="col-md-2">@DateTime.Now.ToShortDateString()</h4>
                                     </div>
                                     <style>
                                         .FechaForm1 {
@@ -50,7 +52,7 @@
                         <div class="form-group">
                             <div class="box-body">
                                 <div>
-                                    <h4 class="col-md-3 text-left">Fecha Inicio - Fin :</h4>
+                                    @Html.Label("labelFechaIF", "Fecha Inicio - Fin :", new {@class ="col-md-3 h4"})
                                     <!-- Boton de DateRange -->
                                     <div class="col-md-3">
                                         <div class="form-group">
@@ -63,8 +65,8 @@
                                         </div>
                                     </div>
                                     <!-- Boton de DateRange -->
-
-                                    <h4 class="col-md-3 text-left">Codigo de Venta:</h4>
+                          
+                                    @Html.Label("labelCodigoVenta", "Codigo de Venta:", new { @class = "col-md-3 h4" })
                                     <!-- Boton de Busqueda -->
                                     <div class="col-md-3">
                                         <div class="input-group">
@@ -121,11 +123,11 @@
                                                             </div>
                                                         </td>
                                                         <td>
-                                                            <a class="btn btn-default" data-toggle="modal" data-target=".example1" href="@Url.Action("_modalDetalles" , "ListaVentas", new { area = "Mod_Venta" } )" role="button">Detalle</a>
+                                                            <a class="btn btn-default" data-toggle="modal" data-target=".example1" href="@Url.Action("_modalDetalles", "ListaVentas", new { area = "Mod_Venta" })" role="button">Detalle</a>
                                                             <button type="button" class="btn  btn-info">Anular</button>
                                                         </td>
                                                         <td>
-                                                            <a class="btn btn-primary" data-toggle="modal" data-target=".example2" href="@Url.Action("_modalGenerar" , "ListaVentas", new { area = "Mod_Venta" } )" role="button">Generar</a>
+                                                            <a class="btn btn-primary" data-toggle="modal" data-target=".example2" href="@Url.Action("_modalGenerar", "ListaVentas", new { area = "Mod_Venta" })" role="button">Generar</a>
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -242,7 +244,7 @@
 </div>
 
 <!-- Primer Modal - Detalle -->
-<div class="modal fade example1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div class="modal fade example1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-backdrop = "static">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
 
@@ -253,7 +255,7 @@
 </div>
 <!-- Primer Modal - Detalle -->
 <!-- Segundo Modal - Generar -->
-<div class="modal fade example2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div class="modal fade example2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-backdrop = "static">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             @Html.Partial("_modalGenerar")
@@ -261,3 +263,4 @@
     </div>
 </div>
 <!-- Segundo Modal - Generar -->
+}
